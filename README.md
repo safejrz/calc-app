@@ -1,3 +1,5 @@
+## Gonna keep adding changes, please use the dev branch and master for merging only.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
