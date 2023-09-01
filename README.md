@@ -1,4 +1,6 @@
-## Gonna keep adding changes, please use the dev branch and master for merging only.
+## Gonna keep adding changes, please use the 
+## dev branch and master for merging only.
+## you got it
 
 # Getting Started with Create React App
 
