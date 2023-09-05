@@ -1,45 +1,36 @@
-import React from 'react';
-import Result from './components/Result';
-import './App.css';
+import React, { useState } from "react";
+import MathOperations from "./components/MathOperation";
+import Functions from "./components/Functions";
+import Numbers from "./components/Numbers";
+import Result from "./components/Result";
+import "./App.css";
 
 const App = () => {
-  debugger
-  console.log("Renderizacion de app")  
+  const arrayTextoFuncionModificaTexto = useState("");
+  const texto = arrayTextoFuncionModificaTexto[0];
+  const functionModificaTexto = arrayTextoFuncionModificaTexto[1];
+
+  console.log("App render");
   return (
-    <main className='react-calculator'>
-        <h2>Calc App</h2>
-      <div className='result'>
-        <Result />
-      </div>
-      <div className="numbers">
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
-        <button>0</button>
-      </div>
-      <div className="functions">
-        <button>
-          clear
-        </button>
-        <button>
-          r
-        </button>
-      </div>
-      <div className="math-operations">
-        <button>+</button>
-        <button>-</button>
-        <button>*</button>
-        <button>/</button>
-        <button>=</button>
-      </div>
-     </main>
-    )
-}
+    <main className="react-calculator">
+      <h2>Calculator App</h2>
+      <Result value={texto} />
+      <Numbers
+        onClickNumber={(number) => {
+          console.log("Number: ", { number });
+          functionModificaTexto(number);
+        }}
+      />
+      <Functions
+        onContentClear={() => console.log("Clear")}
+        onDelete={() => console.log("Delete")}
+      />
+      <MathOperations
+        onClickOperation={(operation) => console.log("Op: ", operation)}
+        onClickEqual={(equal) => console.log("Equal:", equal)}
+      />
+    </main>
+  );
+};
 
 export default App;
